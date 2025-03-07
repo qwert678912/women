@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Women's Day</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        text-align: center;
+        background: linear-gradient(135deg, #f88b8e, #77625c);
+        color: #5a0941;
+        padding: 20px;
+        overflow-x: hidden;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 30px;
+        margin-top: 20px;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 1s forwards ease-in-out;
+      }
+      .message {
+        font-size: 20px;
+        margin-top: 10px;
+        font-style: italic;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 1s 0.5s forwards ease-in-out;
+        padding: 15px;
+        border-radius: 10px;
+        border: 2px solid rgba(90, 9, 65, 0.6);
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .photo-container {
+        width: 100%;
+        aspect-ratio: 9/16;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s 1s forwards ease-in-out;
+        overflow: hidden;
+      }
+      .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .interests,
+      .orders {
+        margin-top: 40px;
+        text-align: left;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+      .interests.show,
+      .orders.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .interests ul,
+      .orders ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .interests li,
+      .orders li {
+        font-size: 18px;
+        margin: 10px 0;
+        background: #3f1f25;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Happy Women's Day, My Love! 💖</h1>
+      <p class="message">
+        Aap wo hai jise hum apni takat mante hai meri khusiya bhi tume hi hai
+        priyu✨🫶🏻...tum ik bahut bahadur, strong women ho, koi dikkt aati hai
+        ache se lgi rhti hai aap kuch chupaa nhi paati thodi innocent si
+        introvert but intelligent hai aap✨♥... Trust me tum aapne pe aajao toh
+        tumko koi hara nhi sktaa chahe pdhayi ho ya kuchbhi✨... Tum Lakshmi ho,
+        tum Parvati ho tum Durga ho ♥✨tum ik नारी ho✨♥... Happy Women's day
+        beautiful ✨♥... 💕
+      </p>
+      <div class="photo-container">
+        <img src="IMG-20250111-WA0003.jpg" alt="Your Photo" />
+      </div>
+      <div class="photo-container">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbWt-HSIPddtbos9CbRLo2nxFU8C1Tz5TCHQ&s"
+          alt="Your Photo"
+        />
+      </div>
+      <div class="interests" id="interests">
+        <h2>Things You Love ❤️</h2>
+        <ul>
+          <li>🌸 Roses</li>
+          <li>Billu..(Cute Cat)</li>
+
+          <li>Milkcake....😋</li>
+          <li>Beautifull jagh jana...🥺</li>
+          <li>List Continues...</li>
+        </ul>
+      </div>
+      <div class="orders" id="orders">
+        <h2>Priyu's Order🛍️</h2>
+        <ul>
+          <li>Pizza With Cheese😋</li>
+          <li>Sprite..</li>
+          <li>DairyMilk Silk-5</li>
+          <li>Momo 5 Plate</li>
+          <li>Gulab Jamun 1 dibba</li>
+          <li>BhelPuri chatpata</li>
+          <li>List Continues...</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("scroll", function () {
+        let interests = document.getElementById("interests");
+        let orders = document.getElementById("orders");
+        let position1 = interests.getBoundingClientRect().top;
+        let position2 = orders.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.2;
+        if (position1 < screenPosition) {
+          interests.classList.add("show");
+        }
+        if (position2 < screenPosition) {
+          orders.classList.add("show");
+        }
+      });
+    </script>
+  </body>
+</html>
